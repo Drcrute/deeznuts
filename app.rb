@@ -1,7 +1,7 @@
 require 'sinatra'
 require 'sinatra/activerecord'
 
-set :database, {adapter: "sqlite3", database: "ruby3.sqlite3"}
+configure (:development){set :database, {adapter: "sqlite3", database: "ruby3.sqlite3"}}
 
 require './models.rb'
 
@@ -15,3 +15,5 @@ POST '/sign_up_process'
 	redirect
 	erb :signup
 end
+
+
